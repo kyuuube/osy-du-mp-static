@@ -27,8 +27,7 @@ const config = {
   defineConstants: {
   },
   copy: {
-    patterns: [
-    ],
+    patterns: [],
     options: {
     }
   },

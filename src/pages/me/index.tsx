@@ -1,12 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 import { ComponentType } from 'react'
-// eslint-disable-next-line no-unused-vars
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
-import OsyHeader from '../../components/osy-header'
 
-import './index.less'
 
 type PageStateProps = {
   counterStore: {
@@ -17,13 +13,13 @@ type PageStateProps = {
   }
 }
 
-interface Index {
+interface Me {
   props: PageStateProps;
 }
 
 @inject('counterStore')
 @observer
-class Index extends Component {
+class Me extends Component {
 
   /**
    * 指定config的类型声明为: Taro.Config
@@ -66,13 +62,16 @@ class Index extends Component {
   }
 
   render () {
-    // const { counterStore: { counter } } = this.props
+    const { counterStore: { counter } } = this.props
     return (
       <View className='index'>
-        <OsyHeader />
+        <Button onClick={this.increment}>+</Button>
+        <Button onClick={this.decrement}>-</Button>
+        <Button onClick={this.incrementAsync}>Add Async</Button>
+        <Text>{counter}</Text>
       </View>
     )
   }
 }
 
-export default Index  as ComponentType
+export default Me as ComponentType

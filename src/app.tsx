@@ -1,11 +1,11 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { Provider } from '@tarojs/mobx'
-import Index from './pages/index'
+import Taro, { Component, Config } from "@tarojs/taro";
+import { Provider } from "@tarojs/mobx";
+import Index from "./pages/index";
 
-import counterStore from './store/counter'
+import counterStore from "./store/counter";
 
-import './app.less'
-
+import "./app.scss";
+// eslint-disable-next-line import/first
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
@@ -14,10 +14,9 @@ import './app.less'
 
 const store = {
   counterStore
-}
+};
 
 class App extends Component {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -26,34 +25,50 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: [
-      'pages/index/index'
-    ],
+    pages: ["pages/index/index", "pages/me/index"],
     window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      backgroundTextStyle: "light",
+      navigationBarBackgroundColor: "#fff",
+      navigationBarTitleText: "WeChat",
+      navigationBarTextStyle: "black"
+    },
+    tabBar: {
+      color: "#bfbfbf",
+      selectedColor: "#000000",
+      list: [
+        {
+          text: "首页",
+          pagePath: "pages/index/index",
+          iconPath: "assets/icon/home.png",
+          selectedIconPath: "assets/icon/select-home.png"
+        },
+        {
+          text: "我的",
+          pagePath: "pages/me/index",
+          iconPath: "assets/icon/account.png",
+          selectedIconPath: "assets/icon/select-account.png"
+        }
+      ]
     }
-  }
+  };
 
-  componentDidMount () {}
+  componentDidMount() {}
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <Index />
       </Provider>
-    )
+    );
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App />, document.getElementById("app"));
