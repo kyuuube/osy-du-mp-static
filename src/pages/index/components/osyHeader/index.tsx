@@ -26,16 +26,18 @@ export default class OsyHeader extends Component<Props, {}> {
     //     hide: hide
     // })
     return (
-      <AtNavBar
-        className='osy-header'
-        onClickRgIconSt={this.handleClick}
-        onClickLeftIcon={this.handleClick}
-        color='#000'
-        leftIconType='search'
-        rightFirstIconType='camera'
-      >
-        <View >Taro UI</View>
-      </AtNavBar>
+      <View className='osy-header'>
+        <AtNavBar
+          onClickRgIconSt={this.handleClick}
+          onClickLeftIcon={this.handleClick}
+          color='#000'
+          leftIconType='search'
+          rightFirstIconType='camera'
+        >
+          <View >Taro UI</View>
+        </AtNavBar>
+      </View>
+
     );
   }
 }

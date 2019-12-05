@@ -22,3 +22,11 @@ declare const process: {
     [key: string]: any;
   }
 }
+
+interface BaseType {
+  label: string,
+  value: number | string,
+  index: number
+}
+
+interface BaseMapType {[ key: string]: BaseType}

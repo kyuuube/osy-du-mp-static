@@ -1064,10 +1064,10 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
-"@tarojs/components@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/components/download/@tarojs/components-1.3.25.tgz#1648a25f8a0aa7624ce23f37e5f3b9828e9b2570"
-  integrity sha1-FkiiX4oKp2JM4j835fO5go6bJXA=
+"@tarojs/components@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/components/download/@tarojs/components-1.3.27.tgz#e360328d5473f1459f18f59bf60c969f32e809f5"
+  integrity sha1-42AyjVRz8UWfGPWb9gyWnzLoCfU=
   dependencies:
     better-scroll "^1.14.1"
     classnames "^2.2.5"
@@ -1077,34 +1077,34 @@
     swiper "4.4.2"
     weui "^1.1.2"
 
-"@tarojs/mobx-common@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/mobx-common/download/@tarojs/mobx-common-1.3.25.tgz#c45fd7bb44a9a6c203de9e9ce0d7ca4bba758f71"
-  integrity sha1-xF/Xu0SppsID3p6c4NfKS7p1j3E=
+"@tarojs/mobx-common@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/mobx-common/download/@tarojs/mobx-common-1.3.27.tgz#34becf94b406a68272f2242e8b338c53bb55f791"
+  integrity sha1-NL7PlLQGpoJy8iQuizOMU7tV95E=
 
-"@tarojs/mobx-h5@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/mobx-h5/download/@tarojs/mobx-h5-1.3.25.tgz#dc90a8dd48637c8622ece34f50aaa63f5518e608"
-  integrity sha1-3JCo3UhjfIYi7ONPUKqmP1UY5gg=
+"@tarojs/mobx-h5@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/mobx-h5/download/@tarojs/mobx-h5-1.3.27.tgz#b77390e6b950ca71d452d8aeeb26822a2c45670e"
+  integrity sha1-t3OQ5rlQynHUUtiu6yaCKixFZw4=
   dependencies:
-    "@tarojs/mobx-common" "1.3.25"
-    "@tarojs/taro-h5" "1.3.25"
+    "@tarojs/mobx-common" "1.3.27"
+    "@tarojs/taro-h5" "1.3.27"
 
-"@tarojs/mobx-rn@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/mobx-rn/download/@tarojs/mobx-rn-1.3.25.tgz#5893c08201049ab40c0ef4f5f7a6a0464b65fd11"
-  integrity sha1-WJPAggEEmrQMDvT196agRktl/RE=
+"@tarojs/mobx-rn@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/mobx-rn/download/@tarojs/mobx-rn-1.3.27.tgz#bf6aaa954925268428edc6d040282b4db396f125"
+  integrity sha1-v2qqlUklJoQo7cbQQCgrTbOW8SU=
   dependencies:
-    "@tarojs/mobx-common" "1.3.25"
-    "@tarojs/taro-rn" "1.3.25"
+    "@tarojs/mobx-common" "1.3.27"
+    "@tarojs/taro-rn" "1.3.27"
 
-"@tarojs/mobx@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/mobx/download/@tarojs/mobx-1.3.25.tgz#3bcb23f5e28de8a781ba846611f88506f7933047"
-  integrity sha1-O8sj9eKN6KeBuoRmEfiFBveTMEc=
+"@tarojs/mobx@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/mobx/download/@tarojs/mobx-1.3.27.tgz#8689ac62177785807b7d357063bc57098061bc9d"
+  integrity sha1-homsYhd3hYB7fTVwY7xXCYBhvJ0=
   dependencies:
-    "@tarojs/mobx-common" "1.3.25"
-    "@tarojs/taro" "1.3.25"
+    "@tarojs/mobx-common" "1.3.27"
+    "@tarojs/taro" "1.3.27"
 
 "@tarojs/plugin-babel@1.3.25":
   version "1.3.25"
@@ -1142,10 +1142,10 @@
   dependencies:
     uglify-js "^3.3.24"
 
-"@tarojs/rn-runner@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/rn-runner/download/@tarojs/rn-runner-1.3.25.tgz#e360e7d66c624d5f728bee9635e53bcc35f6d832"
-  integrity sha1-42Dn1mxiTV9yi+6WNeU7zDX22DI=
+"@tarojs/rn-runner@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/rn-runner/download/@tarojs/rn-runner-1.3.27.tgz#8c1b69822c12fd97915b7fa876d2dfecf1877177"
+  integrity sha1-jBtpgiwS/ZeRW3+odtLf7PGHcXc=
   dependencies:
     "@expo/bunyan" "1.8.10"
     babel-runtime "^6.9.2"
@@ -1163,10 +1163,10 @@
     rimraf "^2.6.1"
     xdl "48.1.4"
 
-"@tarojs/router@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/router/download/@tarojs/router-1.3.25.tgz#101338d9da181dcd53a9db3566faa1dfb2bdda9f"
-  integrity sha1-EBM42doYHc1Tqds1Zvqh37K92p8=
+"@tarojs/router@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/router/download/@tarojs/router-1.3.27.tgz#332a12ef626106487a8b949bacc8bbc13e62fe6d"
+  integrity sha1-MyoS72JhBkh6i5SbrMi7wT5i/m0=
   dependencies:
     invariant "2.2.4"
     lodash "4.17.13"
@@ -1175,13 +1175,13 @@
     value-equal "0.4.0"
     warning "4.0.2"
 
-"@tarojs/taro-alipay@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/taro-alipay/download/@tarojs/taro-alipay-1.3.25.tgz#fba70f6b45d7144088f1c2223fbf74da25530f11"
-  integrity sha1-+6cPa0XXFECI8cIiP7902iVTDxE=
+"@tarojs/taro-alipay@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro-alipay/download/@tarojs/taro-alipay-1.3.27.tgz#da4334612247a55423c74b85ceff178b3bd1f766"
+  integrity sha1-2kM0YSJHpVQjx0uFzv8XizvR92Y=
   dependencies:
-    "@tarojs/taro" "1.3.25"
-    "@tarojs/utils" "1.3.25"
+    "@tarojs/taro" "1.3.27"
+    "@tarojs/utils" "1.3.27"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
@@ -1196,12 +1196,23 @@
     raf "^3.4.1"
     whatwg-fetch "^2.0.4"
 
-"@tarojs/taro-rn@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/taro-rn/download/@tarojs/taro-rn-1.3.25.tgz#898553585dad4f8958c3aa51cd154d228161ba6b"
-  integrity sha1-iYVTWF2tT4lYw6pRzRVNIoFhums=
+"@tarojs/taro-h5@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro-h5/download/@tarojs/taro-h5-1.3.27.tgz#0ea4aca5f74d81dd80eb8ff9b3a9607a033ad990"
+  integrity sha1-DqSspfdNgd2A64/5s6lgegM62ZA=
   dependencies:
-    "@tarojs/taro" "1.3.25"
+    base64-js "^1.3.0"
+    jsonp-retry "^1.0.3"
+    mobile-detect "^1.4.2"
+    raf "^3.4.1"
+    whatwg-fetch "^2.0.4"
+
+"@tarojs/taro-rn@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro-rn/download/@tarojs/taro-rn-1.3.27.tgz#96b0096189ccebb3a21cf6f05804b41dc8696bf8"
+  integrity sha1-lrAJYYnM67OiHPbwWAS0Hchpa/g=
+  dependencies:
+    "@tarojs/taro" "1.3.27"
     babel-preset-expo "^5.2.0"
     base64-js "^1.3.0"
     expo-av "^6.0.0"
@@ -1219,47 +1230,47 @@
     react-native-stylekit "^1.0.0"
     react-native-unimodules "^0.5.3"
 
-"@tarojs/taro-swan@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/taro-swan/download/@tarojs/taro-swan-1.3.25.tgz#4a9c98f9b4fe2cee724387b558b96d5f71000222"
-  integrity sha1-SpyY+bT+LO5yQ4e1WLltX3EAAiI=
+"@tarojs/taro-swan@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro-swan/download/@tarojs/taro-swan-1.3.27.tgz#91e5f3005f23707fa3807b9bfe7e8d096da65cdb"
+  integrity sha1-keXzAF8jcH+jgHub/n6NCW2mXNs=
   dependencies:
-    "@tarojs/taro" "1.3.25"
-    "@tarojs/utils" "1.3.25"
+    "@tarojs/taro" "1.3.27"
+    "@tarojs/utils" "1.3.27"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-tt@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/taro-tt/download/@tarojs/taro-tt-1.3.25.tgz#67a6a33dd440cacbff4d7334f661d422f051366b"
-  integrity sha1-Z6ajPdRAysv/TXM09mHUIvBRNms=
+"@tarojs/taro-tt@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro-tt/download/@tarojs/taro-tt-1.3.27.tgz#5a2c76db004416be51f5b4e6c093041321c0e870"
+  integrity sha1-Wix22wBEFr5R9bTmwJMEEyHA6HA=
   dependencies:
-    "@tarojs/taro" "1.3.25"
-    "@tarojs/utils" "1.3.25"
+    "@tarojs/taro" "1.3.27"
+    "@tarojs/utils" "1.3.27"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-weapp@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/taro-weapp/download/@tarojs/taro-weapp-1.3.25.tgz#a25f82b10e5a62b1be66d9157e547814d6932252"
-  integrity sha1-ol+CsQ5aYrG+ZtkVflR4FNaTIlI=
+"@tarojs/taro-weapp@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro-weapp/download/@tarojs/taro-weapp-1.3.27.tgz#1a0fe9317813e4462d3955326071c10f98359c88"
+  integrity sha1-Gg/pMXgT5EYtOVUyYHHBD5g1nIg=
   dependencies:
-    "@tarojs/taro" "1.3.25"
-    "@tarojs/utils" "1.3.25"
+    "@tarojs/taro" "1.3.27"
+    "@tarojs/utils" "1.3.27"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-1.3.25.tgz#70fa2ec933da30f08770739478a76a7ecb752358"
-  integrity sha1-cPouyTPaMPCHcHOUeKdqfst1I1g=
+"@tarojs/taro@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-1.3.27.tgz#5664841b46aaf0790f5f95d2f598424d2300c6b7"
+  integrity sha1-VmSEG0aq8HkPX5XS9ZhCTSMAxrc=
   dependencies:
-    "@tarojs/utils" "1.3.25"
+    "@tarojs/utils" "1.3.27"
 
-"@tarojs/utils@1.3.25":
-  version "1.3.25"
-  resolved "https://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-1.3.25.tgz#646698f3bb2babed837447617ccec7bd4ee393e3"
-  integrity sha1-ZGaY87srq+2DdEdhfM7HvU7jk+M=
+"@tarojs/utils@1.3.27":
+  version "1.3.27"
+  resolved "https://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-1.3.27.tgz#49d706afd10825fecec2d8a50414ab4a797fd7b6"
+  integrity sha1-SdcGr9EIJf7OwtilBBSrSnl/17Y=
 
 "@tarojs/webpack-runner@1.3.25":
   version "1.3.25"
@@ -3346,6 +3357,11 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+class@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.npm.taobao.org/class/download/class-0.1.4.tgz#92620d448694603457a39da296554d36ceea2b1f"
+  integrity sha1-kmINRIaUYDRXo52illVNNs7qKx8=
 
 classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
@@ -7677,10 +7693,10 @@ mobile-detect@^1.4.2:
   resolved "https://registry.npm.taobao.org/mobile-detect/download/mobile-detect-1.4.4.tgz#686c74e92d3cc06b09a9b3594b7b981494b137f6"
   integrity sha1-aGx06S08wGsJqbNZS3uYFJSxN/Y=
 
-mobx@4.8.0:
-  version "4.8.0"
-  resolved "https://registry.npm.taobao.org/mobx/download/mobx-4.8.0.tgz?cache=0&sync_timestamp=1573162689086&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmobx%2Fdownload%2Fmobx-4.8.0.tgz#6059feb9e0d3440acca5ae192daad63198b1180f"
-  integrity sha1-YFn+ueDTRArMpa4ZLarWMZixGA8=
+mobx@5.15.0:
+  version "5.15.0"
+  resolved "https://registry.npm.taobao.org/mobx/download/mobx-5.15.0.tgz#3ef34ac4965169698eff6df72f18c2a735e8e7f8"
+  integrity sha1-PvNKxJZRaWmO/233LxjCpzXo5/g=
 
 mockjs@^1.1.0:
   version "1.1.0"
@@ -7808,14 +7824,14 @@ neo-async@^2.5.0:
   resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha1-rCetpmFn+ohJpq3dg39rGJrSCBw=
 
-nerv-devtools@^1.4.0:
-  version "1.5.5"
-  resolved "https://registry.npm.taobao.org/nerv-devtools/download/nerv-devtools-1.5.5.tgz#8b336a1a8dad97d4dd9d50846b6c2b16faabb16d"
-  integrity sha1-izNqGo2tl9TdnVCEa2wrFvqrsW0=
+nerv-devtools@^1.5.6:
+  version "1.5.6"
+  resolved "https://registry.npm.taobao.org/nerv-devtools/download/nerv-devtools-1.5.6.tgz#2af0ef109918e5a5a7282f2cfb8a0d7e4a2858be"
+  integrity sha1-KvDvEJkY5aWnKC8s+4oNfkooWL4=
   dependencies:
     nerv-shared "1.4.0"
     nerv-utils "1.4.5"
-    nervjs "1.5.5"
+    nervjs "1.5.6"
 
 nerv-shared@1.4.0:
   version "1.4.0"
@@ -7827,10 +7843,10 @@ nerv-utils@1.4.5:
   resolved "https://registry.npm.taobao.org/nerv-utils/download/nerv-utils-1.4.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnerv-utils%2Fdownload%2Fnerv-utils-1.4.5.tgz#3e017a8a1b605b35ee31ad396a038207fbc597b0"
   integrity sha1-PgF6ihtgWzXuMa05agOCB/vFl7A=
 
-nervjs@1.5.5, nervjs@^1.4.0:
-  version "1.5.5"
-  resolved "https://registry.npm.taobao.org/nervjs/download/nervjs-1.5.5.tgz?cache=0&sync_timestamp=1573543510934&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnervjs%2Fdownload%2Fnervjs-1.5.5.tgz#aead03e8834943d09bb34bffce397eca6740f7b9"
-  integrity sha1-rq0D6INJQ9Cbs0v/zjl+ymdA97k=
+nervjs@1.5.6, nervjs@^1.5.6:
+  version "1.5.6"
+  resolved "https://registry.npm.taobao.org/nervjs/download/nervjs-1.5.6.tgz#0451dd06993f7e3a885a6d1be3ea049ac51f1abd"
+  integrity sha1-BFHdBpk/fjqIWm0b4+oEmsUfGr0=
   dependencies:
     nerv-shared "1.4.0"
     nerv-utils "1.4.5"
@@ -11187,7 +11203,7 @@ typedarray@^0.0.6:
   resolved "https://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.0.1:
+typescript@^3.7.2:
   version "3.7.2"
   resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.7.2.tgz#27e489b95fa5909445e9fef5ee48d81697ad18fb"
   integrity sha1-J+SJuV+lkJRF6f717kjYFpetGPs=

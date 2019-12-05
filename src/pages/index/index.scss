@@ -1,0 +1,46 @@
+.index {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .at-nav-bar {
+    padding: 10PX;
+    .header-title {
+      font-size: 16PX;
+      .header-item {
+        padding: 2PX;
+        color: #b2b2b2;
+      }
+      .active-item {
+        color: black;
+      }
+    }
+    .at-icon {
+      font-size: 20PX !important;
+    }
+  }
+
+  .homepage-swiper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 56PX;
+    background-color: chocolate;
+    .swiper-tab {
+      width: 100%;
+      height: 100vh;
+    }
+    .tab-follow {
+      background-color: coral;
+    }
+    .tab-recommend {
+      background-color: darkgoldenrod;
+    }
+    .tab-latest {
+      background-color: darksalmon;
+    }
+  }
+}
+

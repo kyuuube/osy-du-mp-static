@@ -2,28 +2,26 @@
 import { ComponentType } from 'react'
 // eslint-disable-next-line no-unused-vars
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
-import OsyHeader from '../../components/osy-header'
+import {AtNavBar} from "taro-ui";
+import classnames from 'classnames'
+import tabTypes from "../../common/constants/tabType"
+import './index.scss'
 
-import './index.less'
-
-type PageStateProps = {
-  counterStore: {
-    counter: number,
-    increment: Function,
-    decrement: Function,
-    incrementAsync: Function
-  }
+type PageState = {
+  currentTab: number,
+  tabTypeList: BaseType[]
 }
 
-interface Index {
-  props: PageStateProps;
+type PageProps = {
+  // currentTab: string,
+  // tabTypeList: BaseType[]
 }
 
 @inject('counterStore')
 @observer
-class Index extends Component {
+class Index extends Component<PageProps, PageState> {
 
   /**
    * 指定config的类型声明为: Taro.Config
@@ -35,6 +33,15 @@ class Index extends Component {
   config: Config = {
     navigationBarTitleText: '首页'
   }
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      currentTab: tabTypes.Recommend.index,
+      tabTypeList: Object.keys(tabTypes).map(i => tabTypes[i])
+    }
+  }
+
 
   componentWillMount () { }
 
@@ -50,26 +57,54 @@ class Index extends Component {
 
   componentDidHide () { }
 
-  increment = () => {
-    const { counterStore } = this.props
-    counterStore.increment()
+  handleClick = () => {
+
   }
 
-  decrement = () => {
-    const { counterStore } = this.props
-    counterStore.decrement()
-  }
-
-  incrementAsync = () => {
-    const { counterStore } = this.props
-    counterStore.incrementAsync()
+  changeCurrent = (value: number) => {
+    this.setState({currentTab: value})
   }
 
   render () {
     // const { counterStore: { counter } } = this.props
+    const { tabTypeList, currentTab } = this.state
     return (
       <View className='index'>
-        <OsyHeader />
+        <View>
+          <AtNavBar
+            onClickRgIconSt={this.handleClick}
+            onClickLeftIcon={this.handleClick}
+            color='#000'
+            leftIconType='search'
+            rightFirstIconType='camera'
+          >
+            <View className='header-title'>
+              {
+                tabTypeList.map((item, index) => {
+                  const TextClass = classnames({'header-item': true, 'active-item': currentTab === item.index})
+                  return <Text onClick={() => this.changeCurrent(item.index)} key={index} className={TextClass}>{item.label}</Text>
+                })
+              }
+            </View>
+          </AtNavBar>
+        </View>
+        <View>
+          <Swiper
+            onChange={(e:any) => console.log(e)}
+            current={currentTab}
+            className='homepage-swiper'
+          >
+            <SwiperItem>
+              <View className='swiper-tab tab-follow'>1</View>
+            </SwiperItem>
+            <SwiperItem>
+              <View className='swiper-tab tab-recommend'>2</View>
+            </SwiperItem>
+            <SwiperItem>
+              <View className='swiper-tab tab-latest'>3</View>
+            </SwiperItem>
+          </Swiper>
+        </View>
       </View>
     )
   }
