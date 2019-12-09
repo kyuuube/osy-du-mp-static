@@ -7,6 +7,8 @@ import { observer, inject } from '@tarojs/mobx'
 import {AtNavBar} from "taro-ui";
 import classnames from 'classnames'
 import tabTypes from "../../common/constants/tabType"
+// components
+import Recommend from "./components/recommend"
 import './index.scss'
 
 type PageState = {
@@ -90,7 +92,7 @@ class Index extends Component<PageProps, PageState> {
         </View>
         <View>
           <Swiper
-            onChange={(e:any) => console.log(e)}
+            onChange={(e:any) => this.changeCurrent(e.currentTarget.current)}
             current={currentTab}
             className='homepage-swiper'
           >
@@ -98,7 +100,7 @@ class Index extends Component<PageProps, PageState> {
               <View className='swiper-tab tab-follow'>1</View>
             </SwiperItem>
             <SwiperItem>
-              <View className='swiper-tab tab-recommend'>2</View>
+              <Recommend />
             </SwiperItem>
             <SwiperItem>
               <View className='swiper-tab tab-latest'>3</View>

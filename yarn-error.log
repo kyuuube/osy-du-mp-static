@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/12.6.0/bin/node /usr/local/bin/yarn add src/common/constants/tabType --silent --no-progress
+  /usr/local/Cellar/node/12.6.0/bin/node /usr/local/bin/yarn add index.scss --silent --no-progress
 
 PATH: 
   /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/qiuguanbin/project/oyster-mp-v2-static/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/qiuguanbin/project/oyster-mp-v2-static/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/qiuguanbin/go/bin
@@ -14,15 +14,15 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/src%2fcommon/constants/tabType: [not_found] document not found
+  Error: https://registry.npm.taobao.org/index.scss: Not found
       at Request.params.callback [as _callback] (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:66926:18)
       at Request.self.callback (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:140564:22)
       at Request.emit (events.js:203:13)
       at Request.<anonymous> (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:141536:10)
       at Request.emit (events.js:203:13)
-      at Gunzip.<anonymous> (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:141458:12)
+      at IncomingMessage.<anonymous> (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:141458:12)
       at Object.onceWrapper (events.js:291:20)
-      at Gunzip.emit (events.js:208:15)
+      at IncomingMessage.emit (events.js:208:15)
       at endReadableNT (_stream_readable.js:1154:12)
       at processTicksAndRejections (internal/process/task_queues.js:77:11)
 
@@ -67,6 +67,7 @@ npm manifest:
       "@tarojs/taro-swan": "1.3.27",
       "@tarojs/taro-tt": "1.3.27",
       "@tarojs/taro-weapp": "1.3.27",
+      "class": "^0.1.4",
       "classnames": "^2.2.6",
       "mobx": "5.15.0",
       "mockjs": "^1.1.0",
@@ -3466,6 +3467,11 @@ Lockfile:
       define-property "^0.2.5"
       isobject "^3.0.0"
       static-extend "^0.1.1"
+  
+  class@^0.1.4:
+    version "0.1.4"
+    resolved "https://registry.npm.taobao.org/class/download/class-0.1.4.tgz#92620d448694603457a39da296554d36ceea2b1f"
+    integrity sha1-kmINRIaUYDRXo52illVNNs7qKx8=
   
   classnames@^2.2.5, classnames@^2.2.6:
     version "2.2.6"
