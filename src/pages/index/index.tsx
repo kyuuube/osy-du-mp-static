@@ -8,7 +8,7 @@ import {AtNavBar} from "taro-ui";
 import classnames from 'classnames'
 import tabTypes from "../../common/constants/tabType"
 // components
-import Recommend from "./components/recommend"
+import Recommend from "./components/recommend/recommend"
 import './index.scss'
 
 type PageState = {
