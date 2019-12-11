@@ -11,40 +11,15 @@ $bg: #0D0630;
 }
 
 .masonry-layout {
-  column-count: 1;
-  column-gap: 10PX;
-  @media screen and (min-width: 300px) {
-    column-count: 2;
-  }
+  display: flex;
+  background-color: #f7f7f7;
 
-  @media screen and (min-width: 700px) {
-    column-count: 3;
-  }
-
-  .item {
-    height: auto;
-      image {
-        display: inline-block;
-        width: 100%;
+  .column {
+    display: flex;
+    flex-direction: column;
+    .item {
+        margin-top: 10PX;
+        background-color: aquamarine;
       }
-    //box-sizing: border-box;
-    //break-inside: avoid;
-    //padding: 10px;
-    //counter-increment: item-counter;
-
-    &__content {
-      //position: relative;
-      //display: flex;
-      //flex-direction: column;
-      //justify-content: center;
-      //align-items: center;
-      ////height: 220px;
-      //font-size: 40px;
-      //color: darken($bg, 5%);
-      //background: currentColor;
-      //box-sizing: border-box;
-      //@include setColorAndHover($itemBg1);
-
-    }
   }
 }
