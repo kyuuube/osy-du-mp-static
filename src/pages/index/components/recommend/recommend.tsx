@@ -36,6 +36,13 @@ export default class Recommend extends Component<Props, State> {
     this.setState({currentTab: value})
   }
 
+  LowerLoad = () => {
+    // eslint-disable-next-line react/no-string-refs
+    console.log("need to load", this.refs.masonry)
+    // eslint-disable-next-line react/no-string-refs
+    this.refs.masonry.setDataList()
+  }
+
   renderTopicItem = ():any => {
     return  Array(8).fill({topic: "爆气侧漏填填填"}).map((i, index) => {
       return <View key={index} className='topic-item at-row'>
@@ -60,6 +67,7 @@ export default class Recommend extends Component<Props, State> {
             scrollY
             scrollWithAnimation
             enableBackToTop
+            onScrollToLower={() => this.LowerLoad()}
           >
             <View className='hot-topic'>热门话题</View>
             <Swiper
@@ -76,7 +84,7 @@ export default class Recommend extends Component<Props, State> {
                   {
                     Array(4).fill({topic: "爆气侧漏填填填"}).map((i, index) => {
                       return <View key={index} className='topic-item at-row'>
-                        <View className='topic-image at-col at-col-4'>
+                        <View className='topic-image at-col at-col-3'>
                           <Image src='https://i.loli.net/2019/11/20/wQfDT1cBZ2yivtz.jpg' />
                         </View>
                         <View className='topic-info at-col'>
@@ -96,7 +104,8 @@ export default class Recommend extends Component<Props, State> {
                 </View>
               </SwiperItem>
             </Swiper>
-            <MasonryLayout />
+            {/* eslint-disable-next-line react/no-string-refs */}
+            <MasonryLayout ref='masonry' />
           </ScrollView>
         </View>
     )

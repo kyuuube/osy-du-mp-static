@@ -1,7 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { observable } from 'mobx';
 // import classnames from 'classnames'
-import { View } from '@tarojs/components'
+import { View, Image, Text } from '@tarojs/components'
+import {AtIcon} from "taro-ui";
 
 import './index.scss'
 
@@ -26,41 +27,62 @@ export default class MasonryLayout extends Component<Props, State> {
 
   componentWillMount() {
     Taro.getSystemInfo().then(value => {
-      console.log(value.windowWidth)
-      this.windowWidth = value.windowWidth
+      this.windowWidth = (value.windowWidth - 21) / 2
+      this.images = [
+        {
+          url: 'https://i.loli.net/2019/12/15/ZFhLkbKqWfMyEVl.jpg',
+          height: 333,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/lnFA372SX9JLT5h.jpg',
+          height: 751,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/CUyfBuTzxnqJkH1.jpg',
+          height: 500,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/1DxWAOTd2HrEVMf.jpg',
+          height: 750,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/SP6J9uwANcDogiI.jpg',
+          height: 750,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/8PcJm9s1g7AQ4Fb.jpg',
+          height: 629,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/v4XydLFuxJ9Mel5.jpg',
+          height: 675,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/KMGvEXu8qxTPCB4.jpg',
+          height: 313,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/YbVWSLm7GxCau4E.jpg',
+          height: 750,
+          width: 500
+        },
+        {
+          url: 'https://i.loli.net/2019/12/15/bTxqCyfoGdRaB9c.jpg',
+          height: 667,
+          width: 500
+        }
+      ]
+      this.initData(2)
     })
-    this.images = [{
-        width: 360,
-        height: 540
-      }, {
-        width: 480,
-        height: 540
-      }, {
-        width: 540,
-        height: 720
-      }, {
-        width: 720,
-        height: 960
-      }, {
-        width: 540,
-        height: 960
-      }, {
-        width: 360,
-        height: 720
-      }, {
-        width: 360,
-        height: 960
-      }, {
-        width: 540,
-        height: 540
-      }, {
-        width: 540,
-        height: 1440
-      }, {
-        width: 960,
-        height: 1440
-      }]
-    this.initData(2)
+
   }
   setDataList() {
     this.images = [...this.images, ...this.images]
@@ -115,12 +137,22 @@ export default class MasonryLayout extends Component<Props, State> {
                 <View key={index} className='column'>
                   {
                     item.map((i) => {
+                      console.log(i.id)
                       return (
-                        <View key={i.id} className='item' style={`height: ${i.showHeight}rpx; width: ${i.showWidth}PX`}>
-                          <View>
-                            {i.id}
+                        <View key={i.id} className='item'>
+                          <Image lazyLoad src={i.url} style={`height: ${i.showHeight}PX; width: ${i.showWidth}PX`}>
+                        </Image>
+                          <View className='info-warp'>
+                            <View className='title'>
+                              唐嫣微博图片图片
+                            </View>
+                            <View className='info'>
+                              <View className='user-info'>驶往leo</View>
+                              <View className='like'> <AtIcon value='heart' size='11' color='#bdbdbd'></AtIcon><Text style='margin-left: 5px'>4933</Text></View>
+                            </View>
                           </View>
                         </View>
+
                       )
                     })
                   }

@@ -5,12 +5,13 @@
   height: 100vh;
   // overflow-y: scroll;
   .hot-topic {
-    text-indent: 12PX;
+    text-indent: 10PX;
     font-size: 12PX;
     color: #b2b2b2;
     font-weight: 300;
   }
   .recommend-swi-warp {
+    padding: 0 10PX;
     height: 128PX;
     .recommend-swi-item {
       overflow: hidden;
@@ -22,7 +23,7 @@
         .topic-image {
           display: flex;
           align-items: center;
-          justify-content: center;
+          //justify-content: center;
           image {
             height: 40PX;
             width: 40PX;
@@ -31,11 +32,12 @@
         .topic-info {
           .topic-title {
             margin-top: 5PX;
-            font-size: 14PX;
+            font-size: 13PX;
           }
           .topic-number {
-            font-size: 12PX;
+            font-size: 10PX;
             color: #b2b2b2;
+            font-weight: 400;
           }
         }
       }

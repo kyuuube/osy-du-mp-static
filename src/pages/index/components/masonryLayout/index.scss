@@ -12,14 +12,40 @@ $bg: #0D0630;
 
 .masonry-layout {
   display: flex;
-  background-color: #f7f7f7;
-
+  background-color: #ffffff;
+  padding: 0 8PX;
   .column {
     display: flex;
     flex-direction: column;
     .item {
         margin-top: 10PX;
-        background-color: aquamarine;
+        image {
+          border-radius: 3PX;
+          border: solid 1px #ebebeb;
+        }
+        .info-warp {
+          padding: 2PX 8PX;
+          .title {
+            font-size: 13PX;
+          }
+          .info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5PX;
+            .user-info {
+              font-size: 11PX;
+              font-weight: 300;
+            }
+            .like {
+              font-size: 11PX;
+              color: #bdbdbd;
+            }
+          }
+        }
+
       }
+  }
+  .column:first-child {
+    margin-right: 5PX;
   }
 }
