@@ -90,7 +90,6 @@ export default class MasonryLayout extends Component<Props, State> {
   }
 
   initData (col) {
-    console.log(this.windowWidth)
     let images: any[] = []
     let list: any[] = []
     let heightArr: any[] = this.state.heightArr
@@ -137,7 +136,6 @@ export default class MasonryLayout extends Component<Props, State> {
                 <View key={index} className='column'>
                   {
                     item.map((i) => {
-                      console.log(i.id)
                       return (
                         <View key={i.id} className='item'>
                           <Image lazyLoad src={i.url} style={`height: ${i.showHeight}PX; width: ${i.showWidth}PX`}>

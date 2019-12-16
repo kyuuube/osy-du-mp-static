@@ -1,0 +1,63 @@
+@import "~taro-ui/dist/style/components/flex.scss";
+.follow {
+  .follow-item {
+    background-color: #ffffff;
+    margin-top: 5PX;
+    .item-header-info {
+      display: flex;
+      padding: 12PX 15PX;
+      align-items: center;
+      .user-info {
+        padding-left: 10PX;
+        .title {
+          font-size: 14PX;
+        }
+        .info {
+          font-size: 11PX;
+          color: #b2b2b2;
+        }
+      }
+    }
+    .photograph-warp {
+      image {
+        width: 100%;
+      }
+    }
+    .main-title {
+      padding: 10PX;
+      font-size: 16PX;
+    }
+    .tag-list {
+      padding: 2PX 12PX;
+      .tag {
+        display: inline-block;
+        font-size: 11PX;
+        padding: 2PX 4PX;
+        border-radius: 2px;
+        background-color: #e7e7e7;
+        color: #229c5e;
+      }
+    }
+    .tool-bar {
+      display: flex;
+      padding: 15PX 15PX;
+      justify-content: space-between;
+      .left {
+      }
+      .right {
+        display: flex;
+        color: #b2b2b2;
+        .item {
+          padding: 0 20PX;
+          text {
+            padding-left: 8PX;
+            font-size: 11PX;
+          }
+        }
+        .item:last-child {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

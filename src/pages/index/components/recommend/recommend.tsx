@@ -27,7 +27,6 @@ export default class Recommend extends Component<Props, State> {
 
   componentWillMount() {
     Taro.getSystemInfo().then(value => {
-      console.log(value.windowHeight)
       this.setState({windowHeight : value.windowHeight})
     })
   }
@@ -37,8 +36,6 @@ export default class Recommend extends Component<Props, State> {
   }
 
   LowerLoad = () => {
-    // eslint-disable-next-line react/no-string-refs
-    console.log("need to load", this.refs.masonry)
     // eslint-disable-next-line react/no-string-refs
     this.refs.masonry.setDataList()
   }

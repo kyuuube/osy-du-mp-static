@@ -9,6 +9,7 @@ import classnames from 'classnames'
 import tabTypes from "../../common/constants/tabType"
 // components
 import Recommend from "./components/recommend/recommend"
+import Follow from "./components/follow/index"
 import './index.scss'
 
 type PageState = {
@@ -39,7 +40,7 @@ class Index extends Component<PageProps, PageState> {
   constructor (props) {
     super(props)
     this.state = {
-      currentTab: tabTypes.Recommend.index,
+      currentTab: tabTypes.Follow.index,
       tabTypeList: Object.keys(tabTypes).map(i => tabTypes[i])
     }
   }
@@ -97,7 +98,7 @@ class Index extends Component<PageProps, PageState> {
             className='homepage-swiper'
           >
             <SwiperItem>
-              <View className='swiper-tab tab-follow'>1</View>
+              <Follow />
             </SwiperItem>
             <SwiperItem>
               <Recommend />
