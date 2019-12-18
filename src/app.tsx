@@ -25,12 +25,9 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: ["pages/index/index", "pages/me/index"],
+    pages: ["pages/index/index", "pages/me/index", "pages/order/index", "pages/service/index"],
     window: {
-      backgroundTextStyle: "light",
-      navigationBarBackgroundColor: "#fff",
-      navigationBarTitleText: "WeChat",
-      navigationBarTextStyle: "black"
+      navigationStyle: "custom"
     },
     tabBar: {
       color: "#bfbfbf",
@@ -43,11 +40,24 @@ class App extends Component {
           selectedIconPath: "assets/icon/select-home.png"
         },
         {
-          text: "我的",
+          text: "购物",
+          pagePath: "pages/order/index",
+          iconPath: "assets/icon/order.png",
+          selectedIconPath: "assets/icon/select-order.png"
+        },
+        {
+          text: "服务",
+          pagePath: "pages/service/index",
+          iconPath: "assets/icon/service.png",
+          selectedIconPath: "assets/icon/select-service.png"
+        },
+        {
+          text: "我",
           pagePath: "pages/me/index",
           iconPath: "assets/icon/account.png",
           selectedIconPath: "assets/icon/select-account.png"
         }
+
       ]
     }
   };
