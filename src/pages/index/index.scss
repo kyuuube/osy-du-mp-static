@@ -1,13 +1,15 @@
 .index {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
   width: 100%;
   height: 100vh;
   .at-nav-bar {
+    height: 36PX;
     padding: 0 10PX 0 10PX;
+    .at-nav-bar__left-view {
+      padding: 0;
+    }
+    .at-nav-bar__right-view {
+      height: auto;
+    }
     .header-title {
       font-size: 16PX;
       .header-item {
@@ -27,13 +29,8 @@
   }
 
   .homepage-swiper {
-    position: absolute;
     width: 100%;
-    height: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 53PX;
+    height: 100vh;
     background-color: #f4f4f4;
     .swiper-tab {
       width: 100%;

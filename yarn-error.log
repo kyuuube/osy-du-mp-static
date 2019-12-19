@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/12.6.0/bin/node /usr/local/bin/yarn add index.scss --silent --no-progress
+  /usr/local/Cellar/node/12.6.0/bin/node /usr/local/bin/yarn add src/components/PageContainer --silent --no-progress
 
 PATH: 
   /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/qiuguanbin/project/oyster-mp-v2-static/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/qiuguanbin/project/oyster-mp-v2-static/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/qiuguanbin/go/bin
@@ -14,8 +14,8 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/index.scss: Not found
-      at Request.params.callback [as _callback] (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:66926:18)
+  Error: https://registry.npm.taobao.org/src%2fcomponents/PageContainer: Request "https://registry.npm.taobao.org/src%2fcomponents/PageContainer" returned a 405
+      at Request.params.callback [as _callback] (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:66935:18)
       at Request.self.callback (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:140564:22)
       at Request.emit (events.js:203:13)
       at Request.<anonymous> (/Users/qiuguanbin/.config/yarn/global/node_modules/yarn/lib/cli.js:141536:10)

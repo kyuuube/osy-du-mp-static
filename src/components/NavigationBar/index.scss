@@ -1,0 +1,45 @@
+.NavigationBar {
+  display: flex;
+  align-items: center;
+  height: 65Px;
+  box-sizing: border-box;
+  position: fixed;
+  left:0;
+  top:0;
+  width:100%;
+  z-index: 3;
+  .titleBox {
+    flex: 1;
+    font-size:18Px;
+    text-align: center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .btn {
+    width: 45Px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrow-left {
+    display: inline-block;
+    height: 10Px;
+    width: 10Px;
+    border-width: 2Px 2Px 0 0;
+    border-color: #b1b1b1;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(180deg);
+  }
+  .leftWrap,.rightWrap{
+    width: 110Px;
+    height:100%;
+    display: flex;
+    align-items: center;
+  }
+  .arrow{
+    height:20Px;
+    width:10.61Px;
+  }
+}

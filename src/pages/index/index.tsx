@@ -1,12 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import { ComponentType } from 'react'
 // eslint-disable-next-line no-unused-vars
-import Taro, { Component, Config } from '@tarojs/taro'
+import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
-import { observer, inject } from '@tarojs/mobx'
+import { observer } from '@tarojs/mobx'
 import {AtNavBar} from "taro-ui";
 import classnames from 'classnames'
+import PageContainer from '../../components/PageContainer/index'
 import tabTypes from "../../common/constants/tabType"
+import { NavigationBarProps } from '../../components/NavigationBar/index'
 // components
 import Recommend from "./components/recommend/recommend"
 import Follow from "./components/follow/index"
@@ -14,51 +16,32 @@ import './index.scss'
 
 type PageState = {
   currentTab: number,
-  tabTypeList: BaseType[]
+  tabTypeList: BaseType[],
+  navigationBarProps: NavigationBarProps
 }
 
-type PageProps = {
-  // currentTab: string,
-  // tabTypeList: BaseType[]
-}
+type PageProps = {}
 
-@inject('counterStore')
 @observer
 class Index extends Component<PageProps, PageState> {
-
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    navigationBarTitleText: '首页'
-  }
 
   constructor (props) {
     super(props)
     this.state = {
-      currentTab: tabTypes.Follow.index,
-      tabTypeList: Object.keys(tabTypes).map(i => tabTypes[i])
+      currentTab: tabTypes.Recommend.index,
+      tabTypeList: Object.keys(tabTypes).map(i => tabTypes[i]),
+      navigationBarProps: {
+        title: '毒',
+        backgroundColor: '#f7f7f7',
+        frontColor: '#000000'
+      }
     }
   }
 
 
-  componentWillMount () { }
-
-  componentWillReact () {
-    console.log('componentWillReact')
+  async componentWillMount () {
+    await Taro.setNavigationBarColor({frontColor: "#000000", backgroundColor: "#ffffff"})
   }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
 
   handleClick = () => {
 
@@ -69,46 +52,47 @@ class Index extends Component<PageProps, PageState> {
   }
 
   render () {
-    // const { counterStore: { counter } } = this.props
-    const { tabTypeList, currentTab } = this.state
+    const { tabTypeList, currentTab, navigationBarProps } = this.state
     return (
-      <View className='index'>
-        <View>
-          <AtNavBar
-            onClickRgIconSt={this.handleClick}
-            onClickLeftIcon={this.handleClick}
-            color='#000'
-            leftIconType='search'
-            rightFirstIconType='camera'
-          >
-            <View className='header-title'>
-              {
-                tabTypeList.map((item, index) => {
-                  const TextClass = classnames({'header-item': true, 'active-item': currentTab === item.index})
-                  return <Text onClick={() => this.changeCurrent(item.index)} key={index} className={TextClass}>{item.label}</Text>
-                })
-              }
-            </View>
-          </AtNavBar>
+      <PageContainer showStatusBar showNavBar navigationBarProps={navigationBarProps}>
+        <View className='index'>
+          <View>
+            <AtNavBar
+              onClickRgIconSt={this.handleClick}
+              onClickLeftIcon={this.handleClick}
+              color='#000'
+              leftIconType='search'
+              rightFirstIconType='camera'
+            >
+              <View className='header-title'>
+                {
+                  tabTypeList.map((item, index) => {
+                    const TextClass = classnames({'header-item': true, 'active-item': currentTab === item.index})
+                    return <Text onClick={() => this.changeCurrent(item.index)} key={index} className={TextClass}>{item.label}</Text>
+                  })
+                }
+              </View>
+            </AtNavBar>
+          </View>
+          <View>
+            <Swiper
+              onChange={(e:any) => this.changeCurrent(e.currentTarget.current)}
+              current={currentTab}
+              className='homepage-swiper'
+            >
+              <SwiperItem>
+                <Follow />
+              </SwiperItem>
+              <SwiperItem>
+                <Recommend />
+              </SwiperItem>
+              <SwiperItem>
+                <View className='swiper-tab tab-latest'>3</View>
+              </SwiperItem>
+            </Swiper>
+          </View>
         </View>
-        <View>
-          <Swiper
-            onChange={(e:any) => this.changeCurrent(e.currentTarget.current)}
-            current={currentTab}
-            className='homepage-swiper'
-          >
-            <SwiperItem>
-              <Follow />
-            </SwiperItem>
-            <SwiperItem>
-              <Recommend />
-            </SwiperItem>
-            <SwiperItem>
-              <View className='swiper-tab tab-latest'>3</View>
-            </SwiperItem>
-          </Swiper>
-        </View>
-      </View>
+      </PageContainer>
     )
   }
 }

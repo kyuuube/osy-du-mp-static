@@ -1,0 +1,13 @@
+.PageContainer {
+  height:100vh;
+  // display: flex;
+  // flex-direction: column;
+  // box-sizing:border-box;
+  >.scroll{
+    flex:1;
+    overflow-y: auto;
+  }
+  .pageContent {
+    // height: 100%;
+  }
+}
