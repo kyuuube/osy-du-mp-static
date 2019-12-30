@@ -1,0 +1,25 @@
+.me{
+  //height: 100vh;
+  //min-height: 90vh;
+  width: 100%;
+  background-color: #f9f9f9;
+  .user-warp  {
+    display: flex;
+    align-items: center;
+    height: 90PX;
+    margin-bottom: 6PX;
+    background-color: #ffffff;
+    padding: 0 25PX;
+    .user-avatar {
+      margin-right: 10PX;
+    }
+  }
+  .logoutBtn {
+    margin-top: 6PX;
+    width: 100%;
+    height: 45PX;
+    line-height: 45PX;
+    text-align: center;
+    background-color: #ffffff;
+  }
+}

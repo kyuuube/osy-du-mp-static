@@ -33,7 +33,8 @@ class Index extends Component<PageProps, PageState> {
       navigationBarProps: {
         title: '毒',
         backgroundColor: '#f7f7f7',
-        frontColor: '#000000'
+        frontColor: '#000000',
+        backBtnVisible: false
       }
     }
   }
