@@ -1,0 +1,18 @@
+.square {
+  background-color: #ffffff;
+  .list-item {
+    display: flex;
+    padding: 12PX 15PX;
+    align-items: center;
+    .item-detail {
+      padding-left: 10PX;
+      .title {
+        font-size: 14PX;
+      }
+      .info {
+        font-size: 11PX;
+        color: #b2b2b2;
+      }
+    }
+  }
+}

@@ -1,41 +1,34 @@
-const config = {
+'use strict';
+
+var config = {
   projectName: 'oyster-mp-v2-static',
   date: '2019-11-21',
   designWidth: 750,
   deviceRatio: {
-    '640': 2.34 / 2,
+    '640': 1.17,
     '750': 1,
-    '828': 1.81 / 2
+    '828': 0.905
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: {
     babel: {
       sourceMap: true,
-      presets: [
-        ['env', {
-          modules: false
-        }]
-      ],
-      plugins: [
-        'transform-decorators-legacy',
-        'transform-class-properties',
-        'transform-object-rest-spread',
-        ['transform-runtime', {
-          "helpers": false,
-          "polyfill": false,
-          "regenerator": true,
-          "moduleName": 'babel-runtime'
-        }]
-      ]
+      presets: [['env', {
+        modules: false
+      }]],
+      plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread', ['transform-runtime', {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true,
+        "moduleName": 'babel-runtime'
+      }]]
     }
   },
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
     patterns: [],
-    options: {
-    }
+    options: {}
   },
   weapp: {
     module: {
@@ -43,18 +36,12 @@ const config = {
         autoprefixer: {
           enable: true,
           config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
+            browsers: ['last 3 versions', 'Android >= 4.1', 'ios >= 8']
           }
         },
         pxtransform: {
           enable: true,
-          config: {
-
-          }
+          config: {}
         },
         url: {
           enable: true,
@@ -80,11 +67,7 @@ const config = {
         autoprefixer: {
           enable: true,
           config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
+            browsers: ['last 3 versions', 'Android >= 4.1', 'ios >= 8']
           }
         },
         cssModules: {
@@ -97,11 +80,11 @@ const config = {
       }
     }
   }
-}
+};
 
 module.exports = function (merge) {
-  if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
+  {
+    return merge({}, config, require("./dev.js"));
   }
-  return merge({}, config, require('./prod'))
-}
+  return merge({}, config, require("./prod.js"));
+};

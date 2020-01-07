@@ -11,7 +11,7 @@ export default {
     index: 1
   },
   Latest: {
-    label: "最新",
+    label: "广场",
     value: "latest",
     index: 2
   }

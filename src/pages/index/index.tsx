@@ -1,18 +1,21 @@
 // eslint-disable-next-line no-unused-vars
-import { ComponentType } from 'react'
+import {ComponentType} from 'react'
 // eslint-disable-next-line no-unused-vars
-import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
-import { observer } from '@tarojs/mobx'
+import Taro, {Component} from '@tarojs/taro'
+import {View, Text, Swiper, SwiperItem} from '@tarojs/components'
+import {observer} from '@tarojs/mobx'
 import {AtNavBar} from "taro-ui";
 import classnames from 'classnames'
 import PageContainer from '../../components/PageContainer/index'
 import tabTypes from "../../common/constants/tabType"
-import { NavigationBarProps } from '../../components/NavigationBar/index'
+import {NavigationBarProps} from '../../components/NavigationBar/index'
 // components
 import Recommend from "./components/recommend/recommend"
 import Follow from "./components/follow/index"
+import Square from "./components/square/index"
 import './index.scss'
+// api
+import {getTopic} from "../../service/hompageApi"
 
 type PageState = {
   currentTab: number,
@@ -25,7 +28,7 @@ type PageProps = {}
 @observer
 class Index extends Component<PageProps, PageState> {
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       currentTab: tabTypes.Recommend.index,
@@ -40,7 +43,8 @@ class Index extends Component<PageProps, PageState> {
   }
 
 
-  async componentWillMount () {
+  async componentWillMount() {
+    this.loadTopic()
     await Taro.setNavigationBarColor({frontColor: "#000000", backgroundColor: "#ffffff"})
   }
 
@@ -52,8 +56,13 @@ class Index extends Component<PageProps, PageState> {
     this.setState({currentTab: value})
   }
 
-  render () {
-    const { tabTypeList, currentTab, navigationBarProps } = this.state
+  async loadTopic() {
+    const {records} = await getTopic().catch(e => e)
+    console.log(records)
+  }
+
+  render() {
+    const {tabTypeList, currentTab, navigationBarProps} = this.state
     return (
       <PageContainer showStatusBar showNavBar navigationBarProps={navigationBarProps}>
         <View className='index'>
@@ -69,7 +78,8 @@ class Index extends Component<PageProps, PageState> {
                 {
                   tabTypeList.map((item, index) => {
                     const TextClass = classnames({'header-item': true, 'active-item': currentTab === item.index})
-                    return <Text onClick={() => this.changeCurrent(item.index)} key={index} className={TextClass}>{item.label}</Text>
+                    return <Text onClick={() => this.changeCurrent(item.index)} key={index}
+                                 className={TextClass}>{item.label}</Text>
                   })
                 }
               </View>
@@ -77,18 +87,18 @@ class Index extends Component<PageProps, PageState> {
           </View>
           <View>
             <Swiper
-              onChange={(e:any) => this.changeCurrent(e.currentTarget.current)}
+              onChange={(e: any) => this.changeCurrent(e.currentTarget.current)}
               current={currentTab}
               className='homepage-swiper'
             >
               <SwiperItem>
-                <Follow />
+                <Follow/>
               </SwiperItem>
               <SwiperItem>
-                <Recommend />
+                <Recommend/>
               </SwiperItem>
               <SwiperItem>
-                <View className='swiper-tab tab-latest'>3</View>
+                <Square/>
               </SwiperItem>
             </Swiper>
           </View>
@@ -98,4 +108,4 @@ class Index extends Component<PageProps, PageState> {
   }
 }
 
-export default Index  as ComponentType
+export default Index as ComponentType
