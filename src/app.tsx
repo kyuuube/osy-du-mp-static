@@ -1,5 +1,5 @@
-import Taro, { Component, Config } from "@tarojs/taro";
-import { Provider } from "@tarojs/mobx";
+import Taro, {Component, Config} from "@tarojs/taro";
+import {Provider} from "@tarojs/mobx";
 import Index from "./pages/index";
 
 import counterStore from "./store/counter";
@@ -12,9 +12,15 @@ import "./app.scss";
 //   require('nerv-devtools')
 // }
 
+// eslint-disable-next-line import/no-commonjs
+// const VConsole = require('vconsole/dist/vconsole.min');
+
 const store = {
   counterStore
 };
+
+// const vConsole = new VConsole();
+// vConsole.setOption({maxLogNumber: 5000});
 
 class App extends Component {
   /**
@@ -62,23 +68,27 @@ class App extends Component {
     }
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+  }
 
-  componentDidShow() {}
+  componentDidShow() {
+  }
 
-  componentDidHide() {}
+  componentDidHide() {
+  }
 
-  componentDidCatchError() {}
+  componentDidCatchError() {
+  }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render() {
     return (
       <Provider store={store}>
-        <Index />
+        <Index/>
       </Provider>
     );
   }
 }
 
-Taro.render(<App />, document.getElementById("app"));
+Taro.render(<App/>, document.getElementById("app"));

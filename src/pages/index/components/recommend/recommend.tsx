@@ -5,6 +5,8 @@ import { Swiper, SwiperItem, View, Image, ScrollView } from '@tarojs/components'
 
 import MasonryLayout from '../masonryLayout/masonryLayout'
 import './index.scss'
+// api
+import {getTopic} from "../../../../service/hompageApi";
 
 type Props = {
   // fullPage?: boolean,
@@ -14,6 +16,7 @@ type Props = {
 type State = {
   currentTab: number
   windowHeight: number
+  topicList: any[]
 }
 
 export default class Recommend extends Component<Props, State> {
@@ -21,11 +24,13 @@ export default class Recommend extends Component<Props, State> {
     super(props)
     this.state = {
       currentTab: 0,
-      windowHeight: 0
+      windowHeight: 0,
+      topicList: []
     }
   }
 
   componentWillMount() {
+    this.loadTopic()
     Taro.getSystemInfo().then(value => {
       this.setState({windowHeight : value.windowHeight})
     })
@@ -40,22 +45,29 @@ export default class Recommend extends Component<Props, State> {
     this.refs.masonry.setDataList()
   }
 
-  renderTopicItem = ():any => {
-    return  Array(8).fill({topic: "爆气侧漏填填填"}).map((i, index) => {
+  async loadTopic() {
+    const {records} = await getTopic().catch(e => e)
+    this.setState({topicList: records})
+    console.log(records)
+    console.log(records.slice(4))
+  }
+
+  renderTopicItem = (topicList: any[]):any => {
+    return  topicList.map((i, index) => {
       return <View key={index} className='topic-item at-row'>
         <View className='topic-image at-col at-col-4'>
-          <Image src='https://i.loli.net/2019/11/20/wQfDT1cBZ2yivtz.jpg' />
+          <Image src={i.url} />
         </View>
         <View className='topic-info at-col'>
-          <View className='topic-title'>{`#${i.topic}`}</View>
-          <View className='topic-number'>233条内容</View>
+          <View className='topic-title'>{`#${i.name}`}</View>
+          <View className='topic-number'>{i.num}条内容</View>
         </View>
       </View>
     })
   }
 
   render() {
-    const { currentTab, windowHeight } = this.state
+    const { currentTab, windowHeight, topicList } = this.state
     const ActiveClass = classnames({'recommend-swi-warp': true, 'second-swi': currentTab === 1})
     return (
         <View className='recommend'>
@@ -79,14 +91,14 @@ export default class Recommend extends Component<Props, State> {
               <SwiperItem>
                 <View className='recommend-swi-item'>
                   {
-                    Array(4).fill({topic: "爆气侧漏填填填"}).map((i, index) => {
+                    topicList.slice(0, 4).map((i, index) => {
                       return <View key={index} className='topic-item at-row'>
                         <View className='topic-image at-col at-col-3'>
-                          <Image src='https://i.loli.net/2019/11/20/wQfDT1cBZ2yivtz.jpg' />
+                          <Image src={i.url} />
                         </View>
                         <View className='topic-info at-col'>
-                          <View className='topic-title'>{`#${i.topic}`}</View>
-                          <View className='topic-number'>233条内容</View>
+                          <View className='topic-title'>{`#${i.name}`}</View>
+                          <View className='topic-number'>{i.num}条内容</View>
                         </View>
                       </View>
                     })
@@ -96,7 +108,7 @@ export default class Recommend extends Component<Props, State> {
               <SwiperItem>
                 <View className='recommend-swi-item'>
                   {
-                    this.renderTopicItem()
+                    this.renderTopicItem(topicList.slice(4))
                   }
                 </View>
               </SwiperItem>

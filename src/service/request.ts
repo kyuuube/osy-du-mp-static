@@ -1,7 +1,6 @@
 import Taro from '@tarojs/taro'
 import qs from 'qs'
-// import {BASE_URL} from '../../config';
-
+import config from './projectConfig';
 /**
  * 检查返回值是否正常
  */
@@ -38,13 +37,13 @@ export default {
     return Taro.request({
       ...options,
       method: method || 'GET',
-      url: `https://www.easy-mock.com/mock/5e149e9374737228ef7f1f01/pro${url}`,
+      url: `${config.BASE_URL}${url}`,
       header: {
         ...options.header
       },
     }).then((res) => {
         return checkSuccess(res)
-      })
+      }).catch(e => throwError(e))
 
   },
   get(options: { url: string, data?: object }) {

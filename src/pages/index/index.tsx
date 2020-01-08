@@ -14,8 +14,6 @@ import Recommend from "./components/recommend/recommend"
 import Follow from "./components/follow/index"
 import Square from "./components/square/index"
 import './index.scss'
-// api
-import {getTopic} from "../../service/hompageApi"
 
 type PageState = {
   currentTab: number,
@@ -42,9 +40,7 @@ class Index extends Component<PageProps, PageState> {
     }
   }
 
-
   async componentWillMount() {
-    this.loadTopic()
     await Taro.setNavigationBarColor({frontColor: "#000000", backgroundColor: "#ffffff"})
   }
 
@@ -54,11 +50,6 @@ class Index extends Component<PageProps, PageState> {
 
   changeCurrent = (value: number) => {
     this.setState({currentTab: value})
-  }
-
-  async loadTopic() {
-    const {records} = await getTopic().catch(e => e)
-    console.log(records)
   }
 
   render() {

@@ -27,6 +27,7 @@ class Me extends Component<Props, State> {
   }
 
   async componentWillMount () {
+    Taro.getUserInfo().then(res => console.log(res))
     await Taro.setNavigationBarColor({frontColor: "#000000", backgroundColor: "#ffffff"})
   }
 
