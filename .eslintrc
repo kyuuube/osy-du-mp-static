@@ -3,14 +3,12 @@
     "taro"
   ],
   "rules": {
-    "no-unused-vars": [
-      "error",
-      {
-        "vars": "local",
-        "args": "none",
-        "ignoreRestSiblings": false
-      }
-    ],
+    "quotes": [2, "single"],
+    "react/jsx-closing-bracket-location": 0,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "varsIgnorePattern": "Taro"
+    }],
     "react/jsx-filename-extension": [
       1,
       {

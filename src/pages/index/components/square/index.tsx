@@ -1,17 +1,15 @@
-import Taro, {Component} from '@tarojs/taro'
-import {View} from '@tarojs/components'
+import Taro, { Component } from '@tarojs/taro';
+import { View } from '@tarojs/components';
 
-import './index.scss'
-import {AtAvatar} from "taro-ui";
+import './index.scss';
+import { AtAvatar } from 'taro-ui';
 
-type Props = {}
+type Props = {};
 
-type State = {}
+type State = {};
 
 export default class Square extends Component<Props, State> {
-
-  componentWillMount() {
-  }
+  componentWillMount() {}
 
   render() {
     return (
@@ -37,6 +35,6 @@ export default class Square extends Component<Props, State> {
           <View>最新内容</View>
         </View>
       </View>
-    )
+    );
   }
 }

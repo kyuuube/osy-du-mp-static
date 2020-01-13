@@ -1,13 +1,13 @@
 // eslint-disable-next-line no-unused-vars
-import { CSSProperties } from "react";
-import { View } from "@tarojs/components";
-import Taro, { Component } from "@tarojs/taro";
-import { observer } from "@tarojs/mobx";
+import { CSSProperties } from 'react';
+import { View } from '@tarojs/components';
+import Taro, { Component } from '@tarojs/taro';
+import { observer } from '@tarojs/mobx';
 // import theme from '../../theme/index'
 // eslint-disable-next-line no-unused-vars
-import NavigationBar, { NavigationBarProps } from "../NavigationBar/index";
+import NavigationBar, { NavigationBarProps } from '../NavigationBar/index';
 
-import "./index.scss";
+import './index.scss';
 
 interface Props {
   navigationBarProps?: NavigationBarProps;
@@ -36,17 +36,17 @@ export default class PageContainer extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      statusBarHeight: process.env.TARO_ENV === "h5" ? 0 : 20,
+      statusBarHeight: process.env.TARO_ENV === 'h5' ? 0 : 20,
       navigationBarHeight: 45,
       contentHeight: 0
     };
   }
 
   async componentWillMount() {
-    if (process.env.TARO_ENV === "weapp") {
+    if (process.env.TARO_ENV === 'weapp') {
       if (!loaded) {
         const { statusBarHeight } = await Taro.getSystemInfo();
-        console.log("statusBarHeight", statusBarHeight);
+        console.log('statusBarHeight', statusBarHeight);
         loaded = true;
         cacheStatusBarHeight = statusBarHeight;
       }
@@ -57,7 +57,7 @@ export default class PageContainer extends Component<Props, State> {
   }
 
   async componentDidShow() {
-    if (process.env.TARO_ENV === "weapp") {
+    if (process.env.TARO_ENV === 'weapp') {
       const { screenHeight } = await Taro.getSystemInfo();
       this.setState({
         contentHeight: screenHeight
@@ -71,7 +71,7 @@ export default class PageContainer extends Component<Props, State> {
       onBackBtnClick();
     } else {
       if (Taro.getCurrentPages().length === 1) {
-        Taro.switchTab({ url: "/pages/Home/index" });
+        Taro.switchTab({ url: '/pages/Home/index' });
       } else {
         Taro.navigateBack();
       }
@@ -81,48 +81,49 @@ export default class PageContainer extends Component<Props, State> {
   render() {
     const { statusBarHeight, navigationBarHeight, contentHeight } = this.state;
     const { containerStyle, showNavBar, showStatusBar, navigationBarProps } = this.props;
-    const frontColor = "#000000";
+    const frontColor = '#000000';
     return (
       <View className='PageContainer' style={{ ...containerStyle }}>
-        { showNavBar ? <NavigationBar
-          title={navigationBarProps && navigationBarProps.title}
-          statusBarHeight={
-            navigationBarProps && navigationBarProps.statusBarHeight
-              ? navigationBarProps.statusBarHeight
-              : statusBarHeight
-          }
-          navigationBarHeight={
-            navigationBarProps && navigationBarProps.navigationBarHeight
-              ? navigationBarProps.navigationBarHeight
-              : navigationBarHeight
-          }
-          frontColor={
-            navigationBarProps && navigationBarProps.frontColor
-              ? navigationBarProps.frontColor
-              : frontColor
-          }
-          backgroundColor={
-            navigationBarProps && navigationBarProps.backgroundColor
-              ? navigationBarProps.backgroundColor
-              : "#ffffff"
-          }
-          backBtnVisible={
-            navigationBarProps && navigationBarProps.backBtnVisible
-          }
-          onBackBtnClick={this.onGoBack}
-          position='fixed'
-        /> : "" }
+        {showNavBar ? (
+          <NavigationBar
+            title={navigationBarProps && navigationBarProps.title}
+            statusBarHeight={
+              navigationBarProps && navigationBarProps.statusBarHeight
+                ? navigationBarProps.statusBarHeight
+                : statusBarHeight
+            }
+            navigationBarHeight={
+              navigationBarProps && navigationBarProps.navigationBarHeight
+                ? navigationBarProps.navigationBarHeight
+                : navigationBarHeight
+            }
+            frontColor={
+              navigationBarProps && navigationBarProps.frontColor
+                ? navigationBarProps.frontColor
+                : frontColor
+            }
+            backgroundColor={
+              navigationBarProps && navigationBarProps.backgroundColor
+                ? navigationBarProps.backgroundColor
+                : '#ffffff'
+            }
+            backBtnVisible={navigationBarProps && navigationBarProps.backBtnVisible}
+            onBackBtnClick={this.onGoBack}
+            position='fixed'
+          />
+        ) : (
+          ''
+        )}
         <View
           className='pageContent'
           style={{
             paddingTop: showNavBar
-              ? statusBarHeight + navigationBarHeight + "px"
+              ? statusBarHeight + navigationBarHeight + 'px'
               : showStatusBar
-              ? statusBarHeight + 20 + "px"
-              : "0px",
-            height: contentHeight ? contentHeight + "px" : "auto"
-          }}
-        >
+              ? statusBarHeight + 20 + 'px'
+              : '0px',
+            height: contentHeight ? contentHeight + 'px' : 'auto'
+          }}>
           {this.props.children}
         </View>
       </View>

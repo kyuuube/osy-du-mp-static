@@ -1,33 +1,32 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro, { Component } from '@tarojs/taro';
 import { observable } from 'mobx';
 // import classnames from 'classnames'
-import { View, Image, Text } from '@tarojs/components'
-import {AtIcon} from "taro-ui";
+import { View, Image, Text } from '@tarojs/components';
+import { AtIcon } from 'taro-ui';
 
-import './index.scss'
+import './index.scss';
 
-type Props = {
-}
+type Props = {};
 
 type State = {
-  list: any[],
-  heightArr: any[],
-}
+  list: any[];
+  heightArr: any[];
+};
 
 export default class MasonryLayout extends Component<Props, State> {
-  @observable images
-  @observable windowWidth
-  constructor (props) {
-    super(props)
+  @observable images;
+  @observable windowWidth;
+  constructor(props) {
+    super(props);
     this.state = {
       list: [],
-      heightArr: [],
-    }
+      heightArr: []
+    };
   }
 
   componentWillMount() {
     Taro.getSystemInfo().then(value => {
-      this.windowWidth = (value.windowWidth - 21) / 2
+      this.windowWidth = (value.windowWidth - 21) / 2;
       this.images = [
         {
           url: 'https://i.loli.net/2019/12/15/ZFhLkbKqWfMyEVl.jpg',
@@ -79,49 +78,48 @@ export default class MasonryLayout extends Component<Props, State> {
           height: 667,
           width: 500
         }
-      ]
-      this.initData(2)
-    })
-
+      ];
+      this.initData(2);
+    });
   }
   setDataList() {
-    this.images = [...this.images, ...this.images]
-    this.initData(2)
+    this.images = [...this.images, ...this.images];
+    this.initData(2);
   }
 
-  initData (col) {
-    let images: any[] = []
-    let list: any[] = []
-    let heightArr: any[] = this.state.heightArr
-    images = this.images.map((i, index) => ({...i, id: index}))
+  initData(col) {
+    let images: any[] = [];
+    let list: any[] = [];
+    let heightArr: any[] = this.state.heightArr;
+    images = this.images.map((i, index) => ({ ...i, id: index }));
     for (let i in images) {
-      const scale = this.windowWidth / images[i].width
-      let height = images[i].height * scale
+      const scale = this.windowWidth / images[i].width;
+      let height = images[i].height * scale;
       // console.log(scale)
-      images[i].showHeight = height
-      images[i].showWidth = this.windowWidth
+      images[i].showHeight = height;
+      images[i].showWidth = this.windowWidth;
       // 第一行的两个盒子
       if (i < col) {
-        list.push([images[i]])
-        heightArr.push(height)
+        list.push([images[i]]);
+        heightArr.push(height);
       } else {
         // 选出高度较矮的一列的索引
-        let minHeight = Math.min.apply(null, this.state.heightArr)
-        let minHeightIndex = this.state.heightArr.indexOf(minHeight)
-        list[minHeightIndex].push(images[i])
-        heightArr = this.state.heightArr
-        heightArr[minHeightIndex] += height
-        this.setState({heightArr: heightArr})
+        let minHeight = Math.min.apply(null, this.state.heightArr);
+        let minHeightIndex = this.state.heightArr.indexOf(minHeight);
+        list[minHeightIndex].push(images[i]);
+        heightArr = this.state.heightArr;
+        heightArr[minHeightIndex] += height;
+        this.setState({ heightArr: heightArr });
       }
     }
     this.setState({
       list: list
-    })
-    this.setState({heightArr: []})
+    });
+    this.setState({ heightArr: [] });
   }
 
   render() {
-    const { list } = this.state
+    const { list } = this.state;
     return (
       /**
        * TODO 1.下拉滚动刷新数据
@@ -130,35 +128,34 @@ export default class MasonryLayout extends Component<Props, State> {
        * ! 需要后端提供图片扩展数据 高度 宽度
        */
       <View className='masonry-layout' onClick={this.setDataList}>
-          {
-            list.map((item, index) => {
-              return (
-                <View key={index} className='column'>
-                  {
-                    item.map((i) => {
-                      return (
-                        <View key={i.id} className='item'>
-                          <Image lazyLoad src={i.url} style={`height: ${i.showHeight}PX; width: ${i.showWidth}PX`}>
-                        </Image>
-                          <View className='info-warp'>
-                            <View className='title'>
-                              唐嫣微博图片图片
-                            </View>
-                            <View className='info'>
-                              <View className='user-info'>驶往leo</View>
-                              <View className='like'> <AtIcon value='heart' size='11' color='#bdbdbd'></AtIcon><Text style='margin-left: 5px'>4933</Text></View>
-                            </View>
-                          </View>
+        {list.map((item, index) => {
+          return (
+            <View key={index} className='column'>
+              {item.map(i => {
+                return (
+                  <View key={i.id} className='item'>
+                    <Image
+                      lazyLoad
+                      src={i.url}
+                      style={`height: ${i.showHeight}PX; width: ${i.showWidth}PX`}></Image>
+                    <View className='info-warp'>
+                      <View className='title'>唐嫣微博图片图片</View>
+                      <View className='info'>
+                        <View className='user-info'>驶往leo</View>
+                        <View className='like'>
+                          {' '}
+                          <AtIcon value='heart' size='11' color='#bdbdbd'></AtIcon>
+                          <Text style='margin-left: 5px'>4933</Text>
                         </View>
-
-                      )
-                    })
-                  }
-                </View>
-              )
-            })
-          }
-        </View>
-    )
+                      </View>
+                    </View>
+                  </View>
+                );
+              })}
+            </View>
+          );
+        })}
+      </View>
+    );
   }
 }

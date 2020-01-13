@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
   return {};
@@ -7,14 +7,8 @@ function mapStateToProps(state) {
 
 class App extends Component {
   render() {
-    return (
-      <div>
-
-      </div>
-    );
+    return <div></div>;
   }
 }
 
-export default connect(
-  mapStateToProps,
-)(App);
+export default connect(mapStateToProps)(App);
