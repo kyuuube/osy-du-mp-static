@@ -5,45 +5,46 @@
   height: 100vh;
   // overflow-y: scroll;
   .hot-topic {
-    text-indent: 10px;
-    font-size: 12px;
+    text-indent: 10PX;
+    font-size: 12PX;
     color: #b2b2b2;
     font-weight: 300;
   }
   .recommend-swi-warp {
-    padding: 0 10px;
-    height: 128px;
+    padding: 0 10PX;
+    height: 128PX;
     .recommend-swi-item {
       overflow: hidden;
       .topic-item {
         float: left;
         width: 50%;
-        height: 45px;
-        margin-top: 5px;
+        height: 45PX;
+        margin-top: 5PX;
         .topic-image {
           display: flex;
           align-items: center;
           //justify-content: center;
           image {
-            height: 40px;
-            width: 40px;
+            height: 40PX;
+            width: 40PX;
           }
         }
         .topic-info {
           .topic-title {
-            margin-top: 5px;
-            font-size: 13px;
+            margin-top: 5PX;
+            font-size: 13PX;
           }
           .topic-number {
-            font-size: 10px;
+            font-size: 10PX;
             color: #b2b2b2;
             font-weight: 400;
           }
         }
       }
+
     }
   }
   .second-swi {
-    height: 220px;
+    height: 220PX;
   }
 }

@@ -8,10 +8,7 @@ import './index.scss';
 // api
 import { getTopic } from '../../../../service/hompageApi';
 
-type Props = {
-  // fullPage?: boolean,
-  // hide?: boolean
-};
+type Props = {};
 
 type State = {
   currentTab: number;

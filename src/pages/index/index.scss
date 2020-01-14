@@ -2,8 +2,8 @@
   width: 100%;
   height: 100vh;
   .at-nav-bar {
-    height: 36px;
-    padding: 0 10px 0 10px;
+    height: 36PX;
+    padding: 0 10PX 0 10PX;
     .at-nav-bar__left-view {
       padding: 0;
     }
@@ -11,9 +11,9 @@
       height: auto;
     }
     .header-title {
-      font-size: 16px;
+      font-size: 16PX;
       .header-item {
-        padding: 2px 8px;
+        padding: 2PX 8PX;
         color: #b2b2b2;
       }
       .active-item {
@@ -21,7 +21,7 @@
       }
     }
     .at-icon {
-      font-size: 20px !important;
+      font-size: 20PX !important;
     }
   }
   .at-nav-bar:after {
