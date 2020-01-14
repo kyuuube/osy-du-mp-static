@@ -38,6 +38,7 @@
     "@tarojs/taro-swan": "1.3.27",
     "@tarojs/taro-tt": "1.3.27",
     "@tarojs/taro-weapp": "1.3.27",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
     "babel-runtime": "^6.26.0",
     "class": "^0.1.4",
     "classnames": "^2.2.6",

@@ -1,10 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 import { CSSProperties } from 'react';
 import { View } from '@tarojs/components';
 import Taro, { Component } from '@tarojs/taro';
 import { observer } from '@tarojs/mobx';
 // import theme from '../../theme/index'
-// eslint-disable-next-line no-unused-vars
 import NavigationBar, { NavigationBarProps } from '../NavigationBar/index';
 
 import './index.scss';

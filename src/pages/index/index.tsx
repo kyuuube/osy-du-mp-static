@@ -1,6 +1,4 @@
-// eslint-disable-next-line no-unused-vars
 import { ComponentType } from 'react';
-// eslint-disable-next-line no-unused-vars
 import Taro, { Component } from '@tarojs/taro';
 import { View, Text, Swiper, SwiperItem } from '@tarojs/components';
 import { observer } from '@tarojs/mobx';

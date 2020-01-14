@@ -1,6 +1,7 @@
 {
   "extends": [
-    "taro"
+    "taro",
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
     "quotes": [2, "single"],
@@ -21,6 +22,7 @@
     ]
   },
   "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
