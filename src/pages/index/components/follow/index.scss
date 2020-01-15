@@ -1,19 +1,19 @@
-@import "~taro-ui/dist/style/components/flex.scss";
+@import '~taro-ui/dist/style/components/flex.scss';
 .follow {
   .follow-item {
     background-color: #ffffff;
-    margin-top: 5PX;
+    margin-top: 5px;
     .item-header-info {
       display: flex;
-      padding: 12PX 15PX;
+      padding: 12px 15px;
       align-items: center;
       .user-info {
-        padding-left: 10PX;
+        padding-left: 10px;
         .title {
-          font-size: 14PX;
+          font-size: 14px;
         }
         .info {
-          font-size: 11PX;
+          font-size: 11px;
           color: #b2b2b2;
         }
       }
@@ -24,15 +24,15 @@
       }
     }
     .main-title {
-      padding: 10PX;
-      font-size: 16PX;
+      padding: 10px;
+      font-size: 16px;
     }
     .tag-list {
-      padding: 2PX 12PX;
+      padding: 2px 12px;
       .tag {
         display: inline-block;
-        font-size: 11PX;
-        padding: 2PX 4PX;
+        font-size: 11px;
+        padding: 2px 4px;
         border-radius: 2px;
         background-color: #e7e7e7;
         color: #229c5e;
@@ -40,7 +40,7 @@
     }
     .tool-bar {
       display: flex;
-      padding: 15PX 15PX;
+      padding: 15px 15px;
       justify-content: space-between;
       .left {
       }
@@ -48,10 +48,10 @@
         display: flex;
         color: #b2b2b2;
         .item {
-          padding: 0 20PX;
+          padding: 0 20px;
           text {
-            padding-left: 8PX;
-            font-size: 11PX;
+            padding-left: 8px;
+            font-size: 11px;
           }
         }
         .item:last-child {

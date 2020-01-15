@@ -1,8 +1,8 @@
 $itemBg1: #720026;
-$itemBg2: #CE4257;
-$itemBg3: #FFC093;
-$itemBg4: #FF7F51;
-$bg: #0D0630;
+$itemBg2: #ce4257;
+$itemBg3: #ffc093;
+$itemBg4: #ff7f51;
+$bg: #0d0630;
 @mixin setColorAndHover($baseColor) {
   color: $baseColor;
   &:hover {
@@ -13,39 +13,38 @@ $bg: #0D0630;
 .masonry-layout {
   display: flex;
   background-color: #ffffff;
-  padding: 0 8PX;
+  padding: 0 8px;
   .column {
     display: flex;
     flex-direction: column;
     .item {
-        margin-top: 10PX;
-        image {
-          border-radius: 3PX;
-          border: solid 1px #ebebeb;
-        }
-        .info-warp {
-          padding: 2PX 8PX;
-          .title {
-            font-size: 13PX;
-          }
-          .info {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 5PX;
-            .user-info {
-              font-size: 11PX;
-              font-weight: 300;
-            }
-            .like {
-              font-size: 11PX;
-              color: #bdbdbd;
-            }
-          }
-        }
-
+      margin-top: 10px;
+      image {
+        border-radius: 3px;
+        border: solid 1px #ebebeb;
       }
+      .info-warp {
+        padding: 2px 8px;
+        .title {
+          font-size: 13px;
+        }
+        .info {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 5px;
+          .user-info {
+            font-size: 11px;
+            font-weight: 300;
+          }
+          .like {
+            font-size: 11px;
+            color: #bdbdbd;
+          }
+        }
+      }
+    }
   }
   .column:first-child {
-    margin-right: 5PX;
+    margin-right: 5px;
   }
 }

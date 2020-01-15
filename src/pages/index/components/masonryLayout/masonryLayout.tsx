@@ -137,7 +137,7 @@ export default class MasonryLayout extends Component<Props, State> {
                     <Image
                       lazyLoad
                       src={i.url}
-                      style={`height: ${i.showHeight}PX; width: ${i.showWidth}PX`}></Image>
+                      style={`height: ${i.showHeight}px; width: ${i.showWidth}px`}></Image>
                     <View className='info-warp'>
                       <View className='title'>唐嫣微博图片图片</View>
                       <View className='info'>
