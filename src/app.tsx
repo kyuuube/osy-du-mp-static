@@ -12,9 +12,6 @@ import './app.scss';
 //   require('nerv-devtools')
 // }
 
-// eslint-disable-next-line import/no-commonjs
-// const VConsole = require('vconsole/dist/vconsole.min');
-
 const store = {
   counterStore
 };
@@ -30,6 +27,9 @@ class App extends Component {
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
+
+  componentDidMount() {}
+
   config: Config = {
     pages: [
       'pages/index/index',
@@ -72,8 +72,6 @@ class App extends Component {
       ]
     }
   };
-
-  componentDidMount() {}
 
   componentDidShow() {}
 

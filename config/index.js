@@ -14,15 +14,28 @@ var config = {
   plugins: {
     babel: {
       sourceMap: true,
-      presets: [['env', {
-        modules: false
-      }]],
-      plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread', ['transform-runtime', {
-        "helpers": false,
-        "polyfill": false,
-        "regenerator": true,
-        "moduleName": 'babel-runtime'
-      }]]
+      presets: [
+        [
+          'env',
+          {
+            modules: false
+          }
+        ]
+      ],
+      plugins: [
+        'transform-decorators-legacy',
+        'transform-class-properties',
+        'transform-object-rest-spread',
+        [
+          'transform-runtime',
+          {
+            helpers: false,
+            polyfill: false,
+            regenerator: true,
+            moduleName: 'babel-runtime'
+          }
+        ]
+      ]
     }
   },
   defineConstants: {},
@@ -82,9 +95,9 @@ var config = {
   }
 };
 
-module.exports = function (merge) {
+module.exports = function(merge) {
   {
-    return merge({}, config, require("./dev.js"));
+    return merge({}, config, require('./dev.js'));
   }
-  return merge({}, config, require("./prod.js"));
+  return merge({}, config, require('./prod.js'));
 };

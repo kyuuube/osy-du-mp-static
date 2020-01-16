@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View } from '@tarojs/components';
+import { AtAvatar } from 'taro-ui';
 
 import './index.scss';
-import { AtAvatar } from 'taro-ui';
 
 type Props = {};
 

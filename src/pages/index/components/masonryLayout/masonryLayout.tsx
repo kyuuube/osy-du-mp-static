@@ -1,6 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
 import { observable } from 'mobx';
-// import classnames from 'classnames'
 import { View, Image, Text } from '@tarojs/components';
 import { AtIcon } from 'taro-ui';
 
@@ -14,8 +13,6 @@ type State = {
 };
 
 export default class MasonryLayout extends Component<Props, State> {
-  @observable images;
-  @observable windowWidth;
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +20,6 @@ export default class MasonryLayout extends Component<Props, State> {
       heightArr: []
     };
   }
-
   componentWillMount() {
     Taro.getSystemInfo().then(value => {
       this.windowWidth = (value.windowWidth - 21) / 2;
@@ -82,6 +78,10 @@ export default class MasonryLayout extends Component<Props, State> {
       this.initData(2);
     });
   }
+
+  @observable images;
+  @observable windowWidth;
+
   setDataList() {
     this.images = [...this.images, ...this.images];
     this.initData(2);
