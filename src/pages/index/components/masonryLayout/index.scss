@@ -13,31 +13,31 @@ $bg: #0d0630;
 .masonry-layout {
   display: flex;
   background-color: #ffffff;
-  padding: 0 8px;
+  padding: 0 16px;
   .column {
     display: flex;
     flex-direction: column;
     .item {
-      margin-top: 10px;
+      margin-top: 20px;
       image {
-        border-radius: 3px;
+        border-radius: 6px;
         border: solid 1px #ebebeb;
       }
       .info-warp {
-        padding: 2px 8px;
+        padding: 4px 16px;
         .title {
-          font-size: 13px;
+          font-size: 26px;
         }
         .info {
           display: flex;
           justify-content: space-between;
-          margin-top: 5px;
+          margin-top: 10px;
           .user-info {
-            font-size: 11px;
+            font-size: 22px;
             font-weight: 300;
           }
           .like {
-            font-size: 11px;
+            font-size: 22px;
             color: #bdbdbd;
           }
         }
@@ -45,6 +45,6 @@ $bg: #0d0630;
     }
   }
   .column:first-child {
-    margin-right: 5px;
+    margin-right: 10px;
   }
 }

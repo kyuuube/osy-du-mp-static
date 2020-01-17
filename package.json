@@ -32,7 +32,6 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "yarn run lint",
       "prettier --write 'src/**/*.{tsx,js,scss}'",
       "git add"
     ]

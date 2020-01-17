@@ -1,7 +1,7 @@
 .NavigationBar {
   display: flex;
   align-items: center;
-  height: 65px;
+  height: 130px;
   box-sizing: border-box;
   position: fixed;
   left: 0;
@@ -10,7 +10,7 @@
   z-index: 3;
   .titleBox {
     flex: 1;
-    font-size: 18px;
+    font-size: 30px;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
