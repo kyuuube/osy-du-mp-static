@@ -11,15 +11,16 @@ interface State {
   navigationBarProps: NavigationBarProps;
 }
 
-export default class Service extends Component<Props, State> {
+export default class Detail extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
       navigationBarProps: {
-        title: '服务',
+        title: '购物2',
         backgroundColor: '#f7f7f7',
         frontColor: '#000000',
-        backBtnVisible: false
+        backBtnVisible: true,
+        userVisible: true
       }
     };
   }

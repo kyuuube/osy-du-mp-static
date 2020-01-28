@@ -36,7 +36,8 @@ class App extends Component {
       'pages/me/index',
       'pages/order/index',
       'pages/service/index',
-      'pages/camera/index'
+      'pages/camera/index',
+      'pages/detail/index'
     ],
     window: {
       navigationStyle: 'custom'

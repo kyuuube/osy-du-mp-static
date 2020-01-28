@@ -118,6 +118,11 @@ export default class MasonryLayout extends Component<Props, State> {
     this.setState({ heightArr: [] });
   }
 
+  // 跳转详情
+  handleClick = () => {
+    Taro.navigateTo({ url: '/pages/detail/index' });
+  };
+
   render() {
     const { list } = this.state;
     return (
@@ -133,7 +138,7 @@ export default class MasonryLayout extends Component<Props, State> {
             <View key={index} className='column'>
               {item.map(i => {
                 return (
-                  <View key={i.id} className='item'>
+                  <View key={i.id} className='item' onClick={() => this.handleClick()}>
                     <Image
                       lazyLoad
                       src={i.url}

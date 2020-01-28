@@ -22,7 +22,7 @@
     "dev:tt": "npm run build:tt -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
-    "lint": "eslint 'src/**/*.{tsx,js}'",
+    "lint": "eslint --ext js,jsx,ts,tsx src",
     "fix": "prettier --write 'src/**/*.{tsx,js,scss}'"
   },
   "husky": {
@@ -31,9 +31,12 @@
     }
   },
   "lint-staged": {
-    "src/**/*": [
-      "eslint --fix",
-      "prettier --write 'src/**/*.{tsx,js,scss}'",
+    "src/**/*.{tsx,jsx,js,ts}": [
+      "yarn run lint",
+      "git add"
+    ],
+    "src/**/*.{tsx,js,ts,scss}": [
+      "prettier --write 'src/**/*.{tsx,js,ts,scss}'",
       "git add"
     ]
   },

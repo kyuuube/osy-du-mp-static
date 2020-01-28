@@ -80,6 +80,7 @@ export default class PageContainer extends Component<Props, State> {
     const { statusBarHeight, navigationBarHeight, contentHeight } = this.state;
     const { containerStyle, showNavBar, showStatusBar, navigationBarProps } = this.props;
     const frontColor = '#000000';
+    console.log(navigationBarProps);
     return (
       <View className='PageContainer' style={{ ...containerStyle }}>
         {showNavBar ? (
@@ -108,6 +109,7 @@ export default class PageContainer extends Component<Props, State> {
             backBtnVisible={navigationBarProps && navigationBarProps.backBtnVisible}
             onBackBtnClick={this.onGoBack}
             position='fixed'
+            userVisible={navigationBarProps && navigationBarProps.userVisible}
           />
         ) : (
           ''

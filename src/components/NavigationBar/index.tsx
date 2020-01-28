@@ -1,6 +1,7 @@
 import { View, Image } from '@tarojs/components';
 import Taro, { Component } from '@tarojs/taro';
 import { observer } from '@tarojs/mobx';
+import { AtIcon } from 'taro-ui';
 import './index.scss';
 // import theme from 'theme'
 
@@ -14,14 +15,9 @@ export interface NavigationBarProps {
   onBackBtnClick?: Function;
   title?: string;
   position?: 'relative' | 'fixed' | 'absolute';
+  userVisible?: boolean;
 }
 interface State {}
-
-/** 箭头图片s */
-const arrows = {
-  black: require('./assets/arrow-black.png'),
-  white: require('./assets/arrow-white.png')
-};
 
 /**
  * @name 自定义导航条
@@ -35,7 +31,8 @@ export default class NavigationBar extends Component<NavigationBarProps, State> 
     backgroundColor: '#ffffff',
     backBtnVisible: true,
     title: '',
-    position: 'fixed'
+    position: 'fixed',
+    userVisible: false
   };
 
   constructor(props: NavigationBarProps) {
@@ -61,17 +58,11 @@ export default class NavigationBar extends Component<NavigationBarProps, State> 
       backgroundColor,
       backBtnVisible,
       title,
-      position
+      position,
+      userVisible
     } = this.props;
-    let frontColorName = 'black';
-    switch (frontColor) {
-      case '#000000':
-        frontColorName = 'black';
-        break;
-      case '#ffffff':
-        frontColorName = 'white';
-        break;
-    }
+    console.log(this.props);
+    console.log(userVisible);
     return (
       <View
         className='NavigationBar'
@@ -85,7 +76,12 @@ export default class NavigationBar extends Component<NavigationBarProps, State> 
         <View className='leftWrap'>
           {backBtnVisible && (
             <View className='btn' onClick={this.goBack}>
-              <Image src={arrows[frontColorName]} className='arrow' />
+              <AtIcon value='chevron-left' size='30' color={frontColor}></AtIcon>
+            </View>
+          )}
+          {userVisible && (
+            <View className='custom-avatar'>
+              <Image src='https://jdc.jd.com/img/200'></Image>
             </View>
           )}
         </View>
