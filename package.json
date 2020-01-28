@@ -22,8 +22,9 @@
     "dev:tt": "npm run build:tt -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
-    "lint": "eslint --ext js,jsx,ts,tsx src",
-    "fix": "prettier --write 'src/**/*.{tsx,js,scss}'"
+    "eslint": "eslint --ext js,jsx,ts,tsx src",
+    "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
+    "fix": "prettier --write 'src/**/*.{tsx,jsx,js,ts,scss}'"
   },
   "husky": {
     "hooks": {
@@ -32,11 +33,15 @@
   },
   "lint-staged": {
     "src/**/*.{tsx,jsx,js,ts}": [
-      "yarn run lint",
+      "yarn run eslint",
+      "git add"
+    ],
+    "src/**/*.{scss}": [
+      "yarn run stylelint",
       "git add"
     ],
     "src/**/*.{tsx,js,ts,scss}": [
-      "prettier --write 'src/**/*.{tsx,js,ts,scss}'",
+      "prettier --write 'src/**/*.{tsx,jsx,js,ts,scss}'",
       "git add"
     ]
   },
