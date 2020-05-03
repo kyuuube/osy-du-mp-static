@@ -1,0 +1,2 @@
+# jhr-mp-static
+
