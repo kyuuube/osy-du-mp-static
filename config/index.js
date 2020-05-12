@@ -16,7 +16,13 @@ const config = {
     plugins: [
       'transform-decorators-legacy',
       'transform-class-properties',
-      'transform-object-rest-spread'
+      'transform-object-rest-spread',
+      ['transform-runtime', {
+        'helpers': false,
+        'polyfill': false,
+        'regenerator': true,
+        'moduleName': 'babel-runtime'
+      }]
     ]
   },
   // 小程序配置从 weapp 改为 mini，可以删掉很多小配置

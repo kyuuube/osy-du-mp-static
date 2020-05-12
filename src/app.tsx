@@ -31,46 +31,9 @@ class App extends Component {
   componentDidMount() {}
 
   config: Config = {
-    pages: [
-      'pages/index/index',
-      'pages/me/index',
-      'pages/order/index',
-      'pages/service/index',
-      'pages/camera/index',
-      'pages/detail/index'
-    ],
+    pages: ['pages/index/index'],
     window: {
       navigationStyle: 'custom'
-    },
-    tabBar: {
-      color: '#bfbfbf',
-      selectedColor: '#000000',
-      list: [
-        {
-          text: '首页',
-          pagePath: 'pages/index/index',
-          iconPath: 'assets/icon/home.png',
-          selectedIconPath: 'assets/icon/select-home.png'
-        },
-        {
-          text: '购物',
-          pagePath: 'pages/order/index',
-          iconPath: 'assets/icon/order.png',
-          selectedIconPath: 'assets/icon/select-order.png'
-        },
-        {
-          text: '服务',
-          pagePath: 'pages/service/index',
-          iconPath: 'assets/icon/service.png',
-          selectedIconPath: 'assets/icon/select-service.png'
-        },
-        {
-          text: '我',
-          pagePath: 'pages/me/index',
-          iconPath: 'assets/icon/account.png',
-          selectedIconPath: 'assets/icon/select-account.png'
-        }
-      ]
     }
   };
 
